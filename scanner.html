@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="Barry McClain">
+  <title>Multi State Pharmacy Law Search App</title>
+<style>
+  th {background-color:#000; color:#fff}
+th,td {padding:10px}
+
+tr:nth-child(odd) {
+  background-color: #f2f2f2
+}</style>
+</head>
+<body>
+<form id="search1">
+  <p></p>
+  <label for="keyword">Enter Keyword into Search Bar:</label>
+  <input id="keyword" type="text" name="keyword" required="required">
+<br>
+  <p>Select State(s):</p>
+  <input type="checkbox" id="IL" name="IL" >
+  <label for="IL">IL</label><br>
+  <input type="checkbox" id="WI" name="WI" >
+  <label for="WI">WI</label><br>
+  <br>
+  <input type="submit" value="Search">
+  <br>
+  <br>
+  <button type="button" id="print">Print List</button>
+  <br>
+  <br>
+  <button type="button" id="start-over">Reset</button>
+
+</form>
+<div id ="printSpace">
+<div id="showData"></div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous">
+
+</script>
+<script src="Code.js"></script>
+
+</body>
+</html>
