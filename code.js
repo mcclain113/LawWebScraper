@@ -1,4 +1,31 @@
-
+const WiChapterPhar1 = [];
+const WiChapterPhar2 = [];
+const WiChapterPhar4 = [];
+const WiChapterPhar5 = [];
+const WiChapterPhar6 = [];
+const WiChapterPhar7 = [];
+const WiChapterPhar8 = [];
+const WiChapterPhar9 = [];
+const WiChapterPhar10 = [];
+const WiChapterPhar11 = [];
+const WiChapterPhar12 = [];
+const WiChapterPhar13 = [];
+const WiChapterPhar14 = [];
+const WiChapterPhar15 = [];
+const WiChapterPhar16 = [];
+const WiChapterPhar17 = [];
+const WiChapterSPS1 = [];
+const WiChapterSPS2 = [];
+const WiChapterSPS3 = [];
+const WiChapterSPS4 = [];
+const WiChapterSPS6 = [];
+const WiChapterSPS7 = [];
+const WiChapterSPS8 = [];
+const WiChapterSPS9 = [];
+const WiChapterStat15 = [];
+const WiChapterStat440 = [];
+const WiChapterStat450 = [];
+const WiChapterStat961 = [];
 
 $(document).ready(function () {
     $("#search1").submit(searchKeyword);
@@ -10,12 +37,17 @@ const arrItems = [];
 
 function searchKeyword(event) {
     event.preventDefault();
-
+//overload for case insensitve search
     jQuery.expr[":"].contains = jQuery.expr.createPseudo(function(arg) {
         return function( elem ) {
             return jQuery(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
         };
     });
+    /*
+    $(function(){
+        $("#showData").remove();
+    });
+*/
     // Fetch Keyword
     //let website = $("input#website").val();
     let keyword = $("input#keyword").val();
@@ -23,12 +55,754 @@ function searchKeyword(event) {
 
 
     if ($('input#WI').prop('checked')) {
+        if (WiChapterPhar1.length === 0){
+
+            const WiChapterPhar1Array = ["https://docs.legis.wisconsin.gov/document/administrativecode/ch.%20Phar%201"];
+            let VarWiChapterPhar1 = 'div:contains("'+1+'")';
+            WiChapterPhar1Array.forEach(function (item, index) {
+                $.get(item, function (html) {
+
+                    // Loop through elements you want to scrape content from
+                    $(html).find('.qs_toc_entry_').each(function () {
+                        //create exception if site fails
+                        var data = {};
+                        var divDetail = $(this).text();
+                        //const divSite = document.getElementsByTagName("href").length;
+                        var divSite = $(this).attr('href');
+
+                        var divSiteFull = `https://docs.legis.wisconsin.gov${divSite}`
+
+                        if (divSite !== undefined) {
+                            WiChapterPhar1.push(divSiteFull);
+                        }
+
+
+                    });
+                });
+            })
+
+        }
+        else{}
+        if (WiChapterPhar2.length === 0){
+            const WiChapterPhar2Array = ["https://docs.legis.wisconsin.gov/document/administrativecode/ch.%20Phar%202"];
+            let VarWiChapterPhar2 = 'div:contains("'+2+'")';
+            WiChapterPhar2Array.forEach(function (item, index) {
+                $.get(item, function (html) {
+
+                    // Loop through elements you want to scrape content from
+                    $(html).find(VarWiChapterPhar2).each(function () {
+                        //create exception if site fails
+                        var data = {};
+                        var divDetail = $(this).text();
+                        //const divSite = document.getElementsByTagName("href").length;
+                        var divSite = $(this).find('.qs_toc_entry_').attr('href');
+
+                        var divSiteFull = `https://docs.legis.wisconsin.gov${divSite}`
+
+                        if (divSite !== undefined) {
+                            WiChapterPhar2.push(divSiteFull);
+                        }
+
+
+                    });
+                });
+            })
+        }
+        else{}
+        if (WiChapterPhar4.length === 0){
+            const WiChapterPhar4Array = ["https://docs.legis.wisconsin.gov/document/administrativecode/ch.%20Phar%204"];
+            let VarWiChapterPhar4 = 'div:contains("'+4+'")';
+            WiChapterPhar4Array.forEach(function (item, index) {
+                $.get(item, function (html) {
+
+                    // Loop through elements you want to scrape content from
+                    $(html).find(VarWiChapterPhar4).each(function () {
+                        //create exception if site fails
+                        var data = {};
+                        var divDetail = $(this).text();
+                        //const divSite = document.getElementsByTagName("href").length;
+                        var divSite = $(this).find('.qs_toc_entry_').attr('href');
+
+                        var divSiteFull = `https://docs.legis.wisconsin.gov${divSite}`
+
+                        if (divSite !== undefined) {
+                            WiChapterPhar4.push(divSiteFull);
+                        }
+
+
+                    });
+                });
+            })
+        }
+        else{}
+        if (WiChapterPhar5.length === 0){
+            const WiChapterPhar5Array = ["https://docs.legis.wisconsin.gov/document/administrativecode/ch.%20Phar%205"];
+            let VarWiChapterPhar5 = 'div:contains("'+5+'")';
+            WiChapterPhar5Array.forEach(function (item, index) {
+                $.get(item, function (html) {
+
+                    // Loop through elements you want to scrape content from
+                    $(html).find(VarWiChapterPhar5).each(function () {
+                        //create exception if site fails
+                        var data = {};
+                        var divDetail = $(this).text();
+                        //const divSite = document.getElementsByTagName("href").length;
+                        var divSite = $(this).find('.qs_toc_entry_').attr('href');
+
+                        var divSiteFull = `https://docs.legis.wisconsin.gov${divSite}`
+
+                        if (divSite !== undefined) {
+                            WiChapterPhar5.push(divSiteFull);
+                        }
+
+
+                    });
+                });
+            })
+        }
+        else{}
+        if (WiChapterPhar6.length === 0) {
+            const WiChapterPhar6Array = ["https://docs.legis.wisconsin.gov/document/administrativecode/ch.%20Phar%206"];
+            let VarWiChapterPhar6 = 'div:contains("'+6+'")';
+            WiChapterPhar6Array.forEach(function (item, index) {
+                $.get(item, function (html) {
+
+                    // Loop through elements you want to scrape content from
+                    $(html).find(VarWiChapterPhar6).each(function () {
+                        //create exception if site fails
+                        var data = {};
+                        var divDetail = $(this).text();
+                        //const divSite = document.getElementsByTagName("href").length;
+                        var divSite = $(this).find('.qs_toc_entry_').attr('href');
+
+                        var divSiteFull = `https://docs.legis.wisconsin.gov${divSite}`
+
+                        if (divSite !== undefined) {
+                            WiChapterPhar6.push(divSiteFull);
+                        }
+
+
+                    });
+                });
+            })
+        }
+        else{}
+        if (WiChapterPhar7.length === 0) {
+            const WiChapterPhar7Array = ["https://docs.legis.wisconsin.gov/document/administrativecode/ch.%20Phar%207"];
+            let VarWiChapterPhar7 = 'div:contains("'+7+'")';
+            WiChapterPhar7Array.forEach(function (item, index) {
+                $.get(item, function (html) {
+
+                    // Loop through elements you want to scrape content from
+                    $(html).find(VarWiChapterPhar7).each(function () {
+                        //create exception if site fails
+                        var data = {};
+                        var divDetail = $(this).text();
+                        //const divSite = document.getElementsByTagName("href").length;
+                        var divSite = $(this).find('.qs_toc_entry_').attr('href');
+
+                        var divSiteFull = `https://docs.legis.wisconsin.gov${divSite}`
+
+                        if (divSite !== undefined) {
+                            WiChapterPhar7.push(divSiteFull);
+                        }
+
+
+                    });
+                });
+            })
+        }
+        else{}
+        if (WiChapterPhar8.length === 0) {
+            const WiChapterPhar8Array = ["https://docs.legis.wisconsin.gov/document/administrativecode/ch.%20Phar%208"];
+            let VarWiChapterPhar8 = 'div:contains("'+8+'")';
+            WiChapterPhar8Array.forEach(function (item, index) {
+                $.get(item, function (html) {
+
+                    // Loop through elements you want to scrape content from
+                    $(html).find(VarWiChapterPhar8).each(function () {
+                        //create exception if site fails
+                        var data = {};
+                        var divDetail = $(this).text();
+                        //const divSite = document.getElementsByTagName("href").length;
+                        var divSite = $(this).find('.qs_toc_entry_').attr('href');
+
+                        var divSiteFull = `https://docs.legis.wisconsin.gov${divSite}`
+
+                        if (divSite !== undefined) {
+                            WiChapterPhar8.push(divSiteFull);
+                        }
+
+
+                    });
+                });
+            })
+        }
+        else{}
+        if (WiChapterPhar9.length === 0) {
+            const WiChapterPhar9Array = ["https://docs.legis.wisconsin.gov/document/administrativecode/ch.%20Phar%209"];
+            let VarWiChapterPhar9 = 'div:contains("'+9+'")';
+            WiChapterPhar9Array.forEach(function (item, index) {
+                $.get(item, function (html) {
+
+                    // Loop through elements you want to scrape content from
+                    $(html).find(VarWiChapterPhar9).each(function () {
+                        //create exception if site fails
+                        var data = {};
+                        var divDetail = $(this).text();
+                        //const divSite = document.getElementsByTagName("href").length;
+                        var divSite = $(this).find('.qs_toc_entry_').attr('href');
+
+                        var divSiteFull = `https://docs.legis.wisconsin.gov${divSite}`
+
+                        if (divSite !== undefined) {
+                            WiChapterPhar9.push(divSiteFull);
+                        }
+
+
+                    });
+                });
+            })
+        }
+        else{}
+        if (WiChapterPhar10.length === 0) {
+            const WiChapterPhar10Array = ["https://docs.legis.wisconsin.gov/document/administrativecode/ch.%20Phar%2010"];
+            let VarWiChapterPhar10 = 'div:contains("'+10+'")';
+            WiChapterPhar10Array.forEach(function (item, index) {
+                $.get(item, function (html) {
+
+                    // Loop through elements you want to scrape content from
+                    $(html).find(VarWiChapterPhar10).each(function () {
+                        //create exception if site fails
+                        var data = {};
+                        var divDetail = $(this).text();
+                        //const divSite = document.getElementsByTagName("href").length;
+                        var divSite = $(this).find('.qs_toc_entry_').attr('href');
+
+                        var divSiteFull = `https://docs.legis.wisconsin.gov${divSite}`
+
+                        if (divSite !== undefined) {
+                            WiChapterPhar10.push(divSiteFull);
+                        }
+
+
+                    });
+                });
+            })
+        }
+        else{}
+        if (WiChapterPhar11.length === 0) {
+            const WiChapterPhar11Array = ["https://docs.legis.wisconsin.gov/document/administrativecode/ch.%20Phar%2011"];
+            let VarWiChapterPhar11 = 'div:contains("'+11+'")';
+            WiChapterPhar11Array.forEach(function (item, index) {
+                $.get(item, function (html) {
+
+                    // Loop through elements you want to scrape content from
+                    $(html).find(VarWiChapterPhar11).each(function () {
+                        //create exception if site fails
+                        var data = {};
+                        var divDetail = $(this).text();
+                        //const divSite = document.getElementsByTagName("href").length;
+                        var divSite = $(this).find('.qs_toc_entry_').attr('href');
+
+                        var divSiteFull = `https://docs.legis.wisconsin.gov${divSite}`
+
+                        if (divSite !== undefined) {
+                            WiChapterPhar11.push(divSiteFull);
+                        }
+
+
+                    });
+                });
+            })
+        }
+        else{}
+        if (WiChapterPhar12.length === 0) {
+            const WiChapterPhar12Array = ["https://docs.legis.wisconsin.gov/document/administrativecode/ch.%20Phar%2012"];
+            let VarWiChapterPhar12 = 'div:contains("'+12+'")';
+            WiChapterPhar12Array.forEach(function (item, index) {
+                $.get(item, function (html) {
+
+                    // Loop through elements you want to scrape content from
+                    $(html).find(VarWiChapterPhar12).each(function () {
+                        //create exception if site fails
+                        var data = {};
+                        var divDetail = $(this).text();
+                        //const divSite = document.getElementsByTagName("href").length;
+                        var divSite = $(this).find('.qs_toc_entry_').attr('href');
+
+                        var divSiteFull = `https://docs.legis.wisconsin.gov${divSite}`
+
+                        if (divSite !== undefined) {
+                            WiChapterPhar12.push(divSiteFull);
+                        }
+
+
+                    });
+                });
+            })
+        }
+        else{}
+        if (WiChapterPhar13.length === 0) {
+            const WiChapterPhar13Array = ["https://docs.legis.wisconsin.gov/document/administrativecode/ch.%20Phar%2013"];
+            let VarWiChapterPhar13 = 'div:contains("'+13+'")';
+            WiChapterPhar13Array.forEach(function (item, index) {
+                $.get(item, function (html) {
+
+                    // Loop through elements you want to scrape content from
+                    $(html).find(VarWiChapterPhar13).each(function () {
+                        //create exception if site fails
+                        var data = {};
+                        var divDetail = $(this).text();
+                        //const divSite = document.getElementsByTagName("href").length;
+                        var divSite = $(this).find('.qs_toc_entry_').attr('href');
+
+                        var divSiteFull = `https://docs.legis.wisconsin.gov${divSite}`
+
+                        if (divSite !== undefined) {
+                            WiChapterPhar13.push(divSiteFull);
+                        }
+
+
+                    });
+                });
+            })
+        }
+        else{}
+        if (WiChapterPhar14.length === 0) {
+            const WiChapterPhar14Array = ["https://docs.legis.wisconsin.gov/document/administrativecode/ch.%20Phar%2014"];
+            let VarWiChapterPhar14 = 'div:contains("'+14+'")';
+            WiChapterPhar14Array.forEach(function (item, index) {
+                $.get(item, function (html) {
+
+                    // Loop through elements you want to scrape content from
+                    $(html).find(VarWiChapterPhar14).each(function () {
+                        //create exception if site fails
+                        var data = {};
+                        var divDetail = $(this).text();
+                        //const divSite = document.getElementsByTagName("href").length;
+                        var divSite = $(this).find('.qs_toc_entry_').attr('href');
+
+                        var divSiteFull = `https://docs.legis.wisconsin.gov${divSite}`
+
+                        if (divSite !== undefined) {
+                            WiChapterPhar14.push(divSiteFull);
+                        }
+
+
+                    });
+                });
+            })
+        }
+        else{}
+        if (WiChapterPhar15.length === 0) {
+            const WiChapterPhar15Array = ["https://docs.legis.wisconsin.gov/document/administrativecode/ch.%20Phar%2015"];
+            let VarWiChapterPhar15 = 'div:contains("'+15+'")';
+            WiChapterPhar15Array.forEach(function (item, index) {
+                $.get(item, function (html) {
+
+                    // Loop through elements you want to scrape content from
+                    $(html).find(VarWiChapterPhar15).each(function () {
+                        //create exception if site fails
+                        var data = {};
+                        var divDetail = $(this).text();
+                        //const divSite = document.getElementsByTagName("href").length;
+                        var divSite = $(this).find('.qs_toc_entry_').attr('href');
+
+                        var divSiteFull = `https://docs.legis.wisconsin.gov${divSite}`
+
+                        if (divSite !== undefined) {
+                            WiChapterPhar15.push(divSiteFull);
+                        }
+
+
+                    });
+                });
+            })
+        }
+        else{}
+        if (WiChapterPhar16.length === 0) {
+            const WiChapterPhar16Array = ["https://docs.legis.wisconsin.gov/document/administrativecode/ch.%20Phar%2016"];
+            let VarWiChapterPhar16 = 'div:contains("'+16+'")';
+            WiChapterPhar16Array.forEach(function (item, index) {
+                $.get(item, function (html) {
+
+                    // Loop through elements you want to scrape content from
+                    $(html).find(VarWiChapterPhar16).each(function () {
+                        //create exception if site fails
+                        var data = {};
+                        var divDetail = $(this).text();
+                        //const divSite = document.getElementsByTagName("href").length;
+                        var divSite = $(this).find('.qs_toc_entry_').attr('href');
+
+                        var divSiteFull = `https://docs.legis.wisconsin.gov${divSite}`
+
+                        if (divSite !== undefined) {
+                            WiChapterPhar16.push(divSiteFull);
+                        }
+
+
+                    });
+                });
+            })
+        }
+        else{}
+        if (WiChapterPhar17.length === 0) {
+            const WiChapterPhar17Array = ["https://docs.legis.wisconsin.gov/document/administrativecode/ch.%20Phar%2017"];
+            let VarWiChapterPhar17 = 'div:contains("'+17+'")';
+            WiChapterPhar17Array.forEach(function (item, index) {
+                $.get(item, function (html) {
+
+                    // Loop through elements you want to scrape content from
+                    $(html).find(VarWiChapterPhar17).each(function () {
+                        //create exception if site fails
+                        var data = {};
+                        var divDetail = $(this).text();
+                        //const divSite = document.getElementsByTagName("href").length;
+                        var divSite = $(this).find('.qs_toc_entry_').attr('href');
+
+                        var divSiteFull = `https://docs.legis.wisconsin.gov${divSite}`
+
+                        if (divSite !== undefined) {
+                            WiChapterPhar17.push(divSiteFull);
+                        }
+
+
+                    });
+                });
+            })
+        }
+        else{}
+        if (WiChapterSPS1.length === 0) {
+            const WiChapterSPS1Array = ["https://docs.legis.wisconsin.gov/document/administrativecode/ch.%20SPS%201"];
+            let VarWiChapterSPS1 = 'div:contains("'+1+'")';
+            WiChapterSPS1Array.forEach(function (item, index) {
+                $.get(item, function (html) {
+
+                    // Loop through elements you want to scrape content from
+                    $(html).find(VarWiChapterSPS1).each(function () {
+                        //create exception if site fails
+                        var data = {};
+                        var divDetail = $(this).text();
+                        //const divSite = document.getElementsByTagName("href").length;
+                        var divSite = $(this).find('.reference').attr('href');
+
+                        var divSiteFull = `https://docs.legis.wisconsin.gov${divSite}`
+
+                        if (divSite !== undefined) {
+                            WiChapterSPS1.push(divSiteFull);
+                        }
+
+
+                    });
+                });
+            })
+        }
+        else{}
+        if (WiChapterSPS2.length === 0) {
+            const WiChapterSPS2Array = ["https://docs.legis.wisconsin.gov/document/administrativecode/ch.%20SPS%202"];
+            let VarWiChapterSPS2 = 'div:contains("'+2+'")';
+            WiChapterSPS2Array.forEach(function (item, index) {
+                $.get(item, function (html) {
+
+                    // Loop through elements you want to scrape content from
+                    $(html).find(VarWiChapterSPS2).each(function () {
+                        //create exception if site fails
+                        var data = {};
+                        var divDetail = $(this).text();
+                        //const divSite = document.getElementsByTagName("href").length;
+                        var divSite = $(this).find('.reference').attr('href');
+
+                        var divSiteFull = `https://docs.legis.wisconsin.gov${divSite}`
+
+                        if (divSite !== undefined) {
+                            WiChapterSPS2.push(divSiteFull);
+                        }
+
+
+                    });
+                });
+            })
+        }
+        else{}
+        if (WiChapterSPS3.length === 0) {
+            const WiChapterSPS3Array = ["https://docs.legis.wisconsin.gov/document/administrativecode/ch.%20SPS%203"];
+            let VarWiChapterSPS3 = 'div:contains("'+3+'")';
+            WiChapterSPS3Array.forEach(function (item, index) {
+                $.get(item, function (html) {
+
+                    // Loop through elements you want to scrape content from
+                    $(html).find(VarWiChapterSPS3).each(function () {
+                        //create exception if site fails
+                        var data = {};
+                        var divDetail = $(this).text();
+                        //const divSite = document.getElementsByTagName("href").length;
+                        var divSite = $(this).find('.reference').attr('href');
+
+                        var divSiteFull = `https://docs.legis.wisconsin.gov${divSite}`
+
+                        if (divSite !== undefined) {
+                            WiChapterSPS3.push(divSiteFull);
+                        }
+
+
+                    });
+                });
+            })
+        }
+        else{}
+        if (WiChapterSPS4.length === 0) {
+            const WiChapterSPS4Array = ["https://docs.legis.wisconsin.gov/document/administrativecode/ch.%20SPS%204"];
+            let VarWiChapterSPS4 = 'div:contains("'+4+'")';
+            WiChapterSPS4Array.forEach(function (item, index) {
+                $.get(item, function (html) {
+
+                    // Loop through elements you want to scrape content from
+                    $(html).find(VarWiChapterSPS4).each(function () {
+                        //create exception if site fails
+                        var data = {};
+                        var divDetail = $(this).text();
+                        //const divSite = document.getElementsByTagName("href").length;
+                        var divSite = $(this).find('.reference').attr('href');
+
+                        var divSiteFull = `https://docs.legis.wisconsin.gov${divSite}`
+
+                        if (divSite !== undefined) {
+                            WiChapterSPS4.push(divSiteFull);
+                        }
+
+
+                    });
+                });
+            })
+        }
+        else{}
+        if (WiChapterSPS6.length === 0) {
+            const WiChapterSPS6Array = ["https://docs.legis.wisconsin.gov/document/administrativecode/ch.%20SPS%206"];
+            let VarWiChapterSPS6 = 'div:contains("'+6+'")';
+            WiChapterSPS6Array.forEach(function (item, index) {
+                $.get(item, function (html) {
+
+                    // Loop through elements you want to scrape content from
+                    $(html).find(VarWiChapterSPS6).each(function () {
+                        //create exception if site fails
+                        var data = {};
+                        var divDetail = $(this).text();
+                        //const divSite = document.getElementsByTagName("href").length;
+                        var divSite = $(this).find('.reference').attr('href');
+
+                        var divSiteFull = `https://docs.legis.wisconsin.gov${divSite}`
+
+                        if (divSite !== undefined) {
+                            WiChapterSPS6.push(divSiteFull);
+                        }
+
+
+                    });
+                });
+            })
+        }
+        else{}
+        if (WiChapterSPS7.length === 0) {
+            const WiChapterSPS7Array = ["https://docs.legis.wisconsin.gov/document/administrativecode/ch.%20SPS%207"];
+            let VarWiChapterSPS7 = 'div:contains("'+7+'")';
+            WiChapterSPS7Array.forEach(function (item, index) {
+                $.get(item, function (html) {
+
+                    // Loop through elements you want to scrape content from
+                    $(html).find(VarWiChapterSPS7).each(function () {
+                        //create exception if site fails
+                        var data = {};
+                        var divDetail = $(this).text();
+                        //const divSite = document.getElementsByTagName("href").length;
+                        var divSite = $(this).find('.reference').attr('href');
+
+                        var divSiteFull = `https://docs.legis.wisconsin.gov${divSite}`
+
+                        if (divSite !== undefined) {
+                            WiChapterSPS7.push(divSiteFull);
+                        }
+
+
+                    });
+                });
+            })
+        }
+        else{}
+        if (WiChapterSPS8.length === 0) {
+            const WiChapterSPS8Array = ["https://docs.legis.wisconsin.gov/document/administrativecode/ch.%20SPS%208"];
+            let VarWiChapterSPS8 = 'div:contains("'+8+'")';
+            WiChapterSPS8Array.forEach(function (item, index) {
+                $.get(item, function (html) {
+
+                    // Loop through elements you want to scrape content from
+                    $(html).find(VarWiChapterSPS8).each(function () {
+                        //create exception if site fails
+                        var data = {};
+                        var divDetail = $(this).text();
+                        //const divSite = document.getElementsByTagName("href").length;
+                        var divSite = $(this).find('.reference').attr('href');
+
+                        var divSiteFull = `https://docs.legis.wisconsin.gov${divSite}`
+
+                        if (divSite !== undefined) {
+                            WiChapterSPS8.push(divSiteFull);
+                        }
+
+
+                    });
+                });
+            })
+        }
+        else{}
+        if (WiChapterSPS9.length === 0) {
+            const WiChapterSPS9Array = ["https://docs.legis.wisconsin.gov/document/administrativecode/ch.%20SPS%209"];
+            let VarWiChapterSPS9 = 'div:contains("'+9+'")';
+            WiChapterSPS9Array.forEach(function (item, index) {
+                $.get(item, function (html) {
+
+                    // Loop through elements you want to scrape content from
+                    $(html).find(VarWiChapterSPS9).each(function () {
+                        //create exception if site fails
+                        var data = {};
+                        var divDetail = $(this).text();
+                        //const divSite = document.getElementsByTagName("href").length;
+                        var divSite = $(this).find('.reference').attr('href');
+
+                        var divSiteFull = `https://docs.legis.wisconsin.gov${divSite}`
+
+                        if (divSite !== undefined) {
+                            WiChapterSPS9.push(divSiteFull);
+                        }
+
+
+                    });
+                });
+            })
+        }
+        else{}
+        if (WiChapterStat15.length === 0) {
+            const WiChapterStat15Array = ["https://docs.legis.wisconsin.gov/statutes/statutes/15"];
+            let VarWiChapterStat15 = 'div:contains("'+15+'")';
+            WiChapterStat15Array.forEach(function (item, index) {
+                $.get(item, function (html) {
+
+                    // Loop through elements you want to scrape content from
+                    $(html).find('a').each(function () {
+                        //create exception if site fails
+                        var data = {};
+                        var divDetail = $(this).text();
+                        //const divSite = document.getElementsByTagName("href");
+                        let divSite = $(this).attr('href');
+
+                        let divSiteFull = `https://docs.legis.wisconsin.gov${divSite}`
+
+                        if (divSite !== undefined) {
+                            let incStr = divSite.includes("document/statutes/15");
+                            let incStr2 = divSite.includes("pdf");
+                            if (incStr === true && incStr2 === false) {
+                                WiChapterStat15.push(divSiteFull);
+                            }
+                        }
+
+                    });
+                });
+            })
+        }
+        else{}
+        if (WiChapterStat440.length === 0) {
+            const WiChapterStat440Array = ["https://docs.legis.wisconsin.gov/statutes/statutes/440"];
+            let VarWiChapterStat440 = 'div:contains("'+440+'")';
+            WiChapterStat440Array.forEach(function (item, index) {
+                $.get(item, function (html) {
+
+                    // Loop through elements you want to scrape content from
+                    $(html).find('a').each(function () {
+                        //create exception if site fails
+                        var data = {};
+                        var divDetail = $(this).text();
+                        //const divSite = document.getElementsByTagName("href");
+                        let divSite = $(this).attr('href');
+
+                        let divSiteFull = `https://docs.legis.wisconsin.gov${divSite}`
+
+                        if (divSite !== undefined) {
+                            let incStr = divSite.includes("document/statutes/440");
+                            let incStr2 = divSite.includes("pdf");
+                            if (incStr === true && incStr2 === false) {
+                                WiChapterStat440.push(divSiteFull);
+                            }
+                        }
+
+                    });
+                });
+            })
+        }
+        else{}
+        if (WiChapterStat450.length === 0) {
+            const WiChapterStat450Array = ["https://docs.legis.wisconsin.gov/statutes/statutes/450"];
+            let VarWiChapterStat450 = 'div:contains("'+450+'")';
+            WiChapterStat450Array.forEach(function (item, index) {
+                $.get(item, function (html) {
+
+                    // Loop through elements you want to scrape content from
+                    $(html).find('a').each(function () {
+                        //create exception if site fails
+                        var data = {};
+                        var divDetail = $(this).text();
+                        //const divSite = document.getElementsByTagName("href");
+                        let divSite = $(this).attr('href');
+
+                        let divSiteFull = `https://docs.legis.wisconsin.gov${divSite}`
+
+                        if (divSite !== undefined) {
+                            let incStr = divSite.includes("document/statutes/450");
+                            let incStr2 = divSite.includes("pdf");
+                            if (incStr === true && incStr2 === false) {
+                                WiChapterStat450.push(divSiteFull);
+                            }
+                        }
+
+                    });
+                });
+            })
+        }
+        else{}
+        if (WiChapterStat961.length === 0){
+            const WiChapterStat961Array = ["https://docs.legis.wisconsin.gov/statutes/statutes/961"];
+            let VarWiChapterStat961 = 'div:contains("'+961+'")';
+            WiChapterStat961Array.forEach(function (item, index) {
+                $.get(item, function (html) {
+
+                    // Loop through elements you want to scrape content from
+                    $(html).find('a').each(function () {
+                        //create exception if site fails
+                        var data = {};
+                        var divDetail = $(this).text();
+                        //const divSite = document.getElementsByTagName("href");
+                        let divSite = $(this).attr('href');
+
+                        let divSiteFull = `https://docs.legis.wisconsin.gov${divSite}`
+
+                        if (divSite !== undefined) {
+                            let incStr = divSite.includes("document/statutes/961");
+                            let incStr2 = divSite.includes("pdf");
+                            if (incStr === true && incStr2 === false) {
+                                WiChapterStat961.push(divSiteFull);
+                            }
+                        }
+
+                    });
+                });
+            })
+        }
+        else{}
         WiAdd();
     }
     else{}
 
-    if ($('input#IL').prop('checked')) {
-        IlAdd();
+    if ($('input#MN').prop('checked')) {
+        MNAdd();
     }
     else{}
     //$("#showData").append(arrItems);
@@ -37,7 +811,7 @@ function searchKeyword(event) {
     //JSONToHTMLTable(arrItems, "showData");
 
 }
-function IlAdd() {
+function MNAdd() {
 
     //keyword and state variable
     let keyword = $("input#keyword").val();
@@ -45,65 +819,12 @@ function IlAdd() {
     let keywordFormattedA = 'div:contains('+keyword+')';
     let keywordFormattedB = ':contains('+keyword+')';
     let keywordFormattedC = ':contains("'+keyword+'")';
-    var state = "IL";
+    var state = "MN";
 
 //array of websites
     //Pharmacy Rules
-    const stateArray = [
-
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300A00100R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300A00200R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300A00300R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300A00400R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300A00500R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300A00600R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300A00700R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300A00800R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300A00900R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300A01000R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300A01100R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300B02000R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300B02100R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300B02200R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300C03000R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300C03100R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300C03200R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300C03300R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300C03400R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300C03500R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300D04000R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300D04100R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300D04200R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300E05000R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300E05100R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300E05200R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300E05300R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300E05400R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300E05500R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300E05600R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300F06000R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300F06100R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300F06200R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300F06300R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300F06400R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300F06500R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300F06600R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300F06700R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300F06800R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300G07000R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300G07100R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300G07200R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300G07300R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300G07400R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300G07500R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300G07600R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300G07700R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300G07800R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300G07900R.html",
-        "https://www.ilga.gov/commission/jcar/admincode/068/068013300G08000R.html"
-
-    ];
-
+    // const stateArray = ["https://www.revisor.mn.gov/statutes/cite/151.102"];
+    const stateArray = ["https://www.ilga.gov/ftp/ILCS/Ch%200225/Act%200085/022500850F.html"];
 
     stateArray.forEach(function (item, index) {
         $.get(item, function (html) {
@@ -159,81 +880,91 @@ function WiAdd() {
     var state = "WI";
 
 //array of websites
-    const stateArray = [
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%201.01",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%201.02",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%202.02",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%202.05",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%202.06",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%204.02",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%204.03",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%204.035",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%205.01",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%205.02",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%205.04",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%205.05",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%205.06",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%206.01",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%206.02",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%206.03",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%206.04",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%206.05",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%206.06",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%206.07",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%206.075",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%206.08",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%207.01",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%207.02",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%207.03",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%207.04",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%207.05",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%207.06",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%207.07",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%207.08",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%207.085",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%207.09",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%207.10",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%207.11",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%207.12",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%207.13",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%207.14",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%207.30",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%207.31",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%207.40",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%207.41",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%207.42",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%207.43",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%207.50",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%207.51",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%207.52",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%207.53",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%207.54",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%207.55",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%207.60",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%207.61",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%207.62",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%208.01",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%208.02",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%208.03",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%208.04",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%208.05",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%208.06",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%208.07",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%208.08",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%209.01",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%2010.01",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%2010.02",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%2010.03",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%2011.01",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%2012.01",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%2012.02",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%2012.03",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%2012.04",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%2012.05",
-        "https://docs.legis.wisconsin.gov/document/administrativecode/Phar%2012.06"
-
-    ];
-
+    const stateArray = [];
+    if ($('input#Phar1').prop('checked')) {
+        Array.prototype.push.apply(stateArray, WiChapterPhar1);
+    }
+    if ($('input#Phar2').prop('checked')) {
+        Array.prototype.push.apply(stateArray, WiChapterPhar2);
+    }
+    if ($('input#Phar4').prop('checked')) {
+        Array.prototype.push.apply(stateArray, WiChapterPhar4);
+    }
+    if ($('input#Phar5').prop('checked')) {
+        Array.prototype.push.apply(stateArray, WiChapterPhar5);
+    }
+    if ($('input#Phar6').prop('checked')) {
+        Array.prototype.push.apply(stateArray, WiChapterPhar6);
+    }
+    if ($('input#Phar7').prop('checked')) {
+        Array.prototype.push.apply(stateArray, WiChapterPhar7);
+    }
+    if ($('input#Phar8').prop('checked')) {
+        Array.prototype.push.apply(stateArray, WiChapterPhar8);
+    }
+    if ($('input#Phar9').prop('checked')) {
+        Array.prototype.push.apply(stateArray, WiChapterPhar9);
+    }
+    if ($('input#Phar10').prop('checked')) {
+        Array.prototype.push.apply(stateArray, WiChapterPhar10);
+    }
+    if ($('input#Phar11').prop('checked')) {
+        Array.prototype.push.apply(stateArray, WiChapterPhar11);
+    }
+    if ($('input#Phar12').prop('checked')) {
+        Array.prototype.push.apply(stateArray, WiChapterPhar12);
+    }
+    if ($('input#Phar13').prop('checked')) {
+        Array.prototype.push.apply(stateArray, WiChapterPhar13);
+    }
+    if ($('input#Phar14').prop('checked')) {
+        Array.prototype.push.apply(stateArray, WiChapterPhar14);
+    }
+    if ($('input#Phar15').prop('checked')) {
+        Array.prototype.push.apply(stateArray, WiChapterPhar15);
+    }
+    if ($('input#Phar16').prop('checked')) {
+        Array.prototype.push.apply(stateArray, WiChapterPhar16);
+    }
+    if ($('input#Phar17').prop('checked')) {
+        Array.prototype.push.apply(stateArray, WiChapterPhar17);
+    }
+    if ($('input#SPS1').prop('checked')) {
+        Array.prototype.push.apply(stateArray, WiChapterSPS1);
+    }
+    if ($('input#SPS2').prop('checked')) {
+        Array.prototype.push.apply(stateArray, WiChapterSPS2);
+    }
+    if ($('input#SPS3').prop('checked')) {
+        Array.prototype.push.apply(stateArray, WiChapterSPS3);
+    }
+    if ($('input#SPS4').prop('checked')) {
+        Array.prototype.push.apply(stateArray, WiChapterSPS4);
+    }
+    if ($('input#SPS6').prop('checked')) {
+        Array.prototype.push.apply(stateArray, WiChapterSPS6);
+    }
+    if ($('input#SPS7').prop('checked')) {
+        Array.prototype.push.apply(stateArray, WiChapterSPS7);
+    }
+    if ($('input#SPS8').prop('checked')) {
+        Array.prototype.push.apply(stateArray, WiChapterSPS8);
+    }
+    if ($('input#SPS9').prop('checked')) {
+        Array.prototype.push.apply(stateArray, WiChapterSPS9);
+    }
+    if ($('input#Stat15').prop('checked')) {
+        Array.prototype.push.apply(stateArray, WiChapterStat15);
+    }
+    if ($('input#Stat440').prop('checked')) {
+        Array.prototype.push.apply(stateArray, WiChapterStat440);
+    }
+    if ($('input#Stat450').prop('checked')) {
+        Array.prototype.push.apply(stateArray, WiChapterStat450);
+    }
+    if ($('input#Stat961').prop('checked')) {
+        Array.prototype.push.apply(stateArray, WiChapterStat961);
+    }
 
     stateArray.forEach(function (item, index) {
         $.get(item, function (html) {
@@ -251,7 +982,7 @@ function WiAdd() {
                     if (href === undefined) {
                         return `<a href=${hrefBase}>${hrefBase}</a>`;
                     } else {
-                        return `<a href="https://docs.legis.wisconsin.gov${href}">https://docs.legis.wisconsin.gov${text}</a>`;
+                        return `<a target="_blank" rel="noopener noreferrer" href="https://docs.legis.wisconsin.gov${href}">https://docs.legis.wisconsin.gov${text}</a>`;
                     }
                 }
 
